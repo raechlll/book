@@ -1,0 +1,15 @@
+---
+title: "Toekomstplannen"
+author: "Rachel Breuer"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Toekomstplan
+
+Over twee jaar wil ik me graag bezighouden met onderzoek over haematologie of oncologie, in combinatie met data science. In de minor Data Science leer ik verschillende vaardigheden en technieken, zodat ik dit kan toepassen in mijn afstudeerstage en later in mijn werk. Met Data Science kunnen we gegevens analyseren en inzichten uit halen, zoals verbeteren van diagnoses en ontdekken van nieuwe manieren om ziektes/ te bestrijden. 
+Een nieuwe skill die ik graag wil leren is het visualiseren van data. Door nieuwe visualisatietools te ontdekken en toe te passen, zou ik in staat zijn om een nieuw type grafiek te maken en het visualiseren van mijn gegevens te vergemakkelijken.
