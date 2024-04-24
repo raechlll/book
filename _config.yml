@@ -6,6 +6,6 @@ output:
   bookdown::gitbook:
     css: "bootstrap.css"
     config:
-      theme: "bootstrap"
+      theme: "journay"
 new_session: yes
 
