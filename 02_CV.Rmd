@@ -1,11 +1,6 @@
----
-title: "Portfolio"
-author: "Rachel Breuer"
-date: "`r Sys.Date()`"
-output: html_document
----
+# CV
 
-```{r setup, include=FALSE}
+```{r cv, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 # Personal profile
