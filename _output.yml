@@ -1,2 +1,3 @@
 bookdown::gitbook:
-  css: "style.css"
+  css: style.css
+  primary: "#096B72"
