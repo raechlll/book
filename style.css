@@ -1,0 +1,23 @@
+/* Verander de achtergrondkleur */
+body {
+    background-color: #333333;
+}
+
+/* Verander de tekstkleur */
+p {
+    color: #007bff;
+}
+
+/* Verander de kleur van koppelingen */
+a {
+    color: #007bff;
+}
+/* Verander het lettertype van de hoofdtekst */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Verander het lettertype van kopteksten */
+h1, h2, h3 {
+    font-family: 'Times New Roman', serif;
+}
