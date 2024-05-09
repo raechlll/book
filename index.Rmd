@@ -4,14 +4,22 @@ author: "Rachel Breuer"
 site: bookdown::bookdown_site
 documentclass: book
 bookdown::gitbook: default
+link-citations: true
 biblio-style: apalike
+description: This is a minimal example of using the bookdown package to write a book.
+  The output format for this example is bookdown::gitbook.
+favicon: favicon32x32.png
+cover-image: favicon32x32.png
 ---
 
-# Introductie
+# Introductie {#section-id .unnumbered}
+<body class="index-page">
 Welkom op mijn data science page! Mijn naam is Rachel Breuer, en ik ben geïnteresseerd in het verkennen en begrijpen van de wereld en biologie door middel van gegevens.
 
 In mijn portfolio deel ik niet alleen mijn portfolio opdrachten, maar ook mijn persoonlijke progressie als data scientist. Hier laat ik ook zien welk R package ik graag wil leren, namelijk de 'survival' package, en hoe ik dit zal aanpakken met daarnaast de resultaten en codes.
+</body>
 
 
-
-
+:::note
+You use a div tip by writing `:::` following by the name that you assigned to it in the CSS after the `div`.
+:::
