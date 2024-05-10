@@ -3,9 +3,6 @@
 Uitleg over experiment
 stappenplan
 
-```{r elegans, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
-```
 ## Importeren en inspecteren
 ```{r excel, eval=T}
 library(readxl)
