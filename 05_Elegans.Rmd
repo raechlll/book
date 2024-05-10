@@ -4,7 +4,7 @@ Uitleg over experiment
 stappenplan
 
 ## Importeren en inspecteren
-```{r excel, eval=T}
+```{r, echo=F}
 library(readxl)
 # Import excel file
 CE_LIQ_FLOW_062_Tidydata <- read_excel("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/Portfolio/data/CE.LIQ.FLOW.062_Tidydata.xlsx")
@@ -15,39 +15,40 @@ reactable(CE_LIQ_FLOW_062_Tidydata, defaultPageSize =5, compact = TRUE)
 ```
 
 ## Scatterplot
-```{r eval=T, message=F}
+```{r, eval=T, message=F}
 library(ggplot2)
 library(dplyr)
 library(tidyverse)
+library(readr)
 
-# Inspect the data types of columns RawData, compName, expType and compConcentration 
-CE_LIQ_FLOW_062_Tidydata %>% select(RawData, compName, compConcentration, expType)
+# Remove NA in rows of the columns
+CE_LIQ_FLOW_062_Tidydata <- na.omit(CE_LIQ_FLOW_062_Tidydata[, c("RawData", "compConcentration", "expType", "compName")])
 
 # Change the columns compName, compConcentration and expType to numeric or factor
-CE_LIQ_FLOW_062_Tidydata$expType   <- as.factor(as.character(CE_LIQ_FLOW_062_Tidydata$expType))
-CE_LIQ_FLOW_062_Tidydata$compConcentration <- as.numeric(as.character(CE_LIQ_FLOW_062_Tidydata$compConcentration))
-CE_LIQ_FLOW_062_Tidydata$compName <- as.factor(as.character(CE_LIQ_FLOW_062_Tidydata$compName))
+CE_LIQ_FLOW_062_Tidydata$expType <- as.factor(CE_LIQ_FLOW_062_Tidydata$expType)
+CE_LIQ_FLOW_062_Tidydata$compConcentration <- as.numeric(CE_LIQ_FLOW_062_Tidydata$compConcentration)
+CE_LIQ_FLOW_062_Tidydata$compName <- as.factor(CE_LIQ_FLOW_062_Tidydata$compName)
 
-# Inspect the data types of columns RawData, compName, expType and compConcentration 
-CE_LIQ_FLOW_062_Tidydata %>% select(RawData, compName, compConcentration, expType)
+# Inspect the data types of columns compName, expType and compConcentration 
+CE_LIQ_FLOW_062_Tidydata %>% select(compName, compConcentration, expType)
 ```
 
 Op basis van de beschrijving van het experiment zouden we verwachten dat de kolom RawData numeriek is. Voor compName zou het een karakter of een factor moeten zijn en voor compConcentration zou het numeriek moeten zijn. Echter, na het importeren van de data, komen de datatypes niet overeen met deze verwachtingen.
 
-```{r eval=T, echo=F, fig.cap= "Scatterplot voor CE_LIQ_FLOW_062_Tidydata waarbij de concentratie van de verbinding op de x-as staat in log10, aantal nakomelingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes."}
+```{r, echo=F, eval=T, fig.cap= "Scatterplot voor CE_LIQ_FLOW_062_Tidydata waarbij de concentratie van de verbinding op de x-as staat in log10, aantal nakomelingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes."}
 
 # scatterplot with log10
 ggplot(data = CE_LIQ_FLOW_062_Tidydata, aes(x = log10(compConcentration + 0.01), y = RawData, color = compName, shape = expType)) +
-geom_jitter(alpha = 0.5, show.legend = TRUE, position = position_jitter(width = 0.1, seed = 0), size = 3) +
+  geom_point(position = position_jitter(width = 0.1, height = 0.1), alpha = 0.5, show.legend = TRUE, size = 3) +
   theme_minimal() +
-  labs( title = "Scatterplot CE_LIQ_FLOW_062_Tidydata", x = "Concentration of the compound (log10)",
-       y = "Raw Data Counts", shape = "Experimental type", color = "Compound name") 
+  labs(title = "Scatterplot CE_LIQ_FLOW_062_Tidydata", x = "Concentration of the compound (log10)",
+       y = "Raw Data Counts", shape = "Experimental type", color = "Compound name")
 ```
 
 De positieve controle voor dit experiment is . De negatieve controle voor dit experiment is .
 
 ## Normalized data
-```{r eval=T, message=F}
+```{r, eval=T, message=F}
 # Calculate mean value of controlNegative
 controlNegative <- CE_LIQ_FLOW_062_Tidydata %>% filter(CE_LIQ_FLOW_062_Tidydata$expType == "controlNegative")
 controlNegative_mean <- mean(controlNegative$RawData) 
@@ -66,14 +67,13 @@ controlNegative_mean
 ```
 
 ### Scatterplot normalized data
-```{r eval=T, echo=F, fig.cap= "Scatterplot van genormaliseerde data voor CE.LIQ.FLOW.062_Tidydata.xlsx waarbij de concentratie van de verbinding op de x-as staat, de genormaliseerde ruwe data tellingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes."}
+```{r, echo=F, eval=T, fig.cap= "Scatterplot van genormaliseerde data voor CE.LIQ.FLOW.062_Tidydata.xlsx waarbij de concentratie van de verbinding op de x-as staat, de genormaliseerde ruwe data tellingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes."}
 
 ggplot(data = CE_LIQ_FLOW_062_Tidydata, aes(x = log10(compConcentration + 0.01), y = normalized, color = compName, shape = expType)) +
-geom_jitter(alpha = 0.5, show.legend = TRUE, position = position_jitter(width = 0.1, seed = 0), size = 3) +
+geom_point(position = position_jitter(width = 0.1, height = 0.1), alpha = 0.5, show.legend = TRUE, size = 3) +
   theme_minimal() +
   labs( title = "Scatterplot normalized CE_LIQ_FLOW_062_Tidydata", x = "Concentration of the compound (log10)",
        y = "Normalized Data", shape = "Experimental type", color = "Compound name") 
 ```
-
 
 Voor de dataset CE_LIQ_FLOW_062_Tidydata werd de controleNegative conditie genormaliseerd, zodat de gemiddelde waarde van controleNegative gelijk is aan 1 en alle waarden worden uitgedrukt als een fractie daarvan. Hierdoor worden de gegevens gestandaardiseerd en wordt het interpreteren en vergelijken van de effecten van verschillende condities gemakkelijker.

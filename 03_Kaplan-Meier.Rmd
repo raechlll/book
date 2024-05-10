@@ -7,7 +7,14 @@ Over twee jaar wil ik me graag bezighouden met onderzoek over haematologie of on
 
 Een nieuwe skill die ik graag wil leren is het visualiseren van data. Door nieuwe visualisatietools te ontdekken en toe te passen, zou ik in staat zijn om een nieuw type grafiek te maken en het visualiseren van mijn gegevens te vergemakkelijken. Voor de vrije ruimte ga ik de 'survival' package van R leren. 'Survival' package wordt gebruikt voor het visualiseren van overleveingsanalyses. Met deze package kan je de tijd tot overlijden of optreden van ziektes bestuderen. Dit is handig voor mijn afstudeerstage en op de werkveld. Met behulp van deze skill kan ik met interesse van haematologie/oncologie de verkregen data beter analyseren en gemakkelijker visualiseren.  
 
-![Figuur 1: Kaplan-Meier plot. De Kaplan-Meier plot van de survival package toont aan de cumulatieve overlevingskansen tegenover tijd.](survival_curve.png)
+```{r echo=F}
+library(knitr)
+```
+
+```{r, echo=FALSE, eval=TRUE, fig.height=3, out.width= '70%', fig.cap="Kaplan-Meier plot. De Kaplan-Meier plot van de survival package toont aan de cumulatieve overlevingskansen tegenover tijd."}
+
+knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/bookdown/images/survival_curve.png")
+```
 
 <br/><br/>
 Om de 'survival' package in vier dagen te leren ga ik de volgende doen. Ten eerste ga ik papers en workflows opzoeken over de package. Met de informatie kan ik kennis vergroten en opzoeken wat ik nodig heb in de datasets. Een paper die ik ga bestuderen is bijvoorbeeld https://cran.r-project.org/web/packages/survival/vignettes/survival.pdf. Ik ga op de internet nepdata of bestaande data opzoeken die gerelateerd is op onderzoeken van ziektes met overlevingskans of periode van overlijding. Ook ga ik op YouTube video's zoeken met uitleg over de gebruik van de package. 
