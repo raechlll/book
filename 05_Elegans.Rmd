@@ -34,7 +34,7 @@ CE_LIQ_FLOW_062_Tidydata %>% select(RawData, compName, compConcentration, expTyp
 
 Op basis van de beschrijving van het experiment zouden we verwachten dat de kolom RawData numeriek is. Voor compName zou het een karakter of een factor moeten zijn en voor compConcentration zou het numeriek moeten zijn. Echter, na het importeren van de data, komen de datatypes niet overeen met deze verwachtingen.
 
-```{r eval=T, message=F, fig.cap= "Scatterplot voor CE_LIQ_FLOW_062_Tidydata waarbij de concentratie van de verbinding op de x-as staat in log10, aantal nakomelingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes."}
+```{r eval=T, echo=F, fig.cap= "Scatterplot voor CE_LIQ_FLOW_062_Tidydata waarbij de concentratie van de verbinding op de x-as staat in log10, aantal nakomelingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes."}
 
 # scatterplot with log10
 ggplot(data = CE_LIQ_FLOW_062_Tidydata, aes(x = log10(compConcentration + 0.01), y = RawData, color = compName, shape = expType)) +
@@ -66,7 +66,7 @@ controlNegative_mean
 ```
 
 ### Scatterplot normalized data
-```{r eval=T, message=F, fig.cap= "Scatterplot van genormaliseerde data voor CE.LIQ.FLOW.062_Tidydata.xlsx waarbij de concentratie van de verbinding op de x-as staat, de genormaliseerde ruwe data tellingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes."}
+```{r eval=T, echo=F, fig.cap= "Scatterplot van genormaliseerde data voor CE.LIQ.FLOW.062_Tidydata.xlsx waarbij de concentratie van de verbinding op de x-as staat, de genormaliseerde ruwe data tellingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes."}
 
 ggplot(data = CE_LIQ_FLOW_062_Tidydata, aes(x = log10(compConcentration + 0.01), y = normalized, color = compName, shape = expType)) +
 geom_jitter(alpha = 0.5, show.legend = TRUE, position = position_jitter(width = 0.1, seed = 0), size = 3) +
