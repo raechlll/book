@@ -21,5 +21,5 @@ In mijn portfolio deel ik niet alleen mijn portfolio opdrachten, maar ook mijn p
 
 
 :::note
-You use a div tip by writing `:::` following by the name that you assigned to it in the CSS after the `div`.
+test  `test`.
 :::
