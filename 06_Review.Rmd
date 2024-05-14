@@ -1,0 +1,37 @@
+# Open peer review
+
+## Introduction
+Neural Style Transfer (NST) is een algortime methode om de inhoud van een afbeelding te combineren met de stijl van een andere afbeelding. Het resultaat is een nieuwe afbeelding die de inhoud van de ene afbeelding combineert met de stijl van de andere. Dit methode kan toegepast worden op proefdieren bijvoorbeeld visuele voorkeuren te manipuleren. 
+In het onderzoek van Hejja-Brichard et al. (2023) wordt NST gebruikt om visuele voorkeuren van vissen te bestuderen door patronen van vissen te manipuleren. De studie onderzoekt de evolutie van dierlijke signaalontwerpen en de aantrekkelijkheid van visuele signalen in relatie tot hun natuurlijke habitat.
+
+In deze review maken we gebruik van het onderzoek van Hejja-Brichard et al. (2023) over het testen van voorkeur van vissen voor kleurpatronen. Hiervoor wordt er gebruik gemaakt van dit artikel, genaamd ["Using Neural Style Transfer to study the evolution of animal signal design: A case study in an ornamented fish"](https://www.biorxiv.org/content/10.1101/2023.03.13.532060v2.full).
+Het artikel wordt gescoord met behulp van de 'Repita'-criteria. Door gebruik te maken met de criteria, kunnen we reproduceerbaarheidsproblemen identificeren in wetenschappelijke publicatie.
+
+<br/><br/>
+
+| Transparency Criteria 	| Definition 	| Response Type 	|  	|  	|
+|:---:	|:---:	|:---:	|---	|---	|
+| Study Purpose 	| A concise statement in the introduction of the article, often in the last paragraph, that establishes the reason the research was conducted. Also called the study objective. 	| Binary 	|  	|  	|
+| Data Availability Statement 	| A statement, in an individual section offset from the main body of text, that explains how or if one can access a study’s data. The title of the section may vary, but it must explicitly mention data; it is therefore distinct from a supplementary materials section. 	| Binary 	|  	|  	|
+| Data Location 	| Where the article’s data can be accessed, either raw or processed. 	| Found Value 	|  	|  	|
+| Study Location 	| Author has stated in the methods section where the study took place or the data’s country/region of origin. 	| Binary; Found Value 	|  	|  	|
+| Author Review 	| The professionalism of the contact information that the author has provided in the manuscript. 	| Found Value 	|  	|  	|
+| Ethics Statement 	| A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data. 	| Binary 	|  	|  	|
+| Funding Statement 	| A statement within the manuscript indicating whether or not the authors received funding for their research. 	| Binary 	|  	|  	|
+| Code Availability 	| Authors have shared access to the most updated code that they used in their study, including code used for analysis. 	| Binary 	|  	|  	|
+
+## 'Repita'-criteria
+Van het artikel stelt de hypothese van 'sensory drive' dat dieren signalen ontwikkelen die aangepast zijn aan hun omgeving. De resultaten ondersteunt de hypothese en wijzen erop dat de vissen de neiging hebben om visuele patronen te verkiezen die overeenkomen met hun natuurlijke leefomgeving. Bovendien toont het onderzoek aan dat kunstmatige intelligentie effectief kan worden ingezet om hypotheses over dierlijk gedrag te testen.  Echter, het rapport mist specifieke gegevens die kunnen worden opgenomen om de bevindingen te ondersteunen.
+
+<br/><br/>
+
+| Transparency Criteria 	| Definition 	| Response Type 	|  	|  	|
+|:---:	|:---:	|:---:	|---	|---	|
+| Study Purpose 	| A concise statement in the introduction of the article, often in the last paragraph, that establishes the reason the research was conducted. Also called the study objective. 	| yes 	|  	|  	|
+| Data Availability Statement 	| A statement, in an individual section offset from the main body of text, that explains how or if one can access a study’s data. The title of the section may vary, but it must explicitly mention data; it is therefore distinct from a supplementary materials section. 	| no 	|  	|  	|
+| Data Location 	| Where the article’s data can be accessed, either raw or processed. 	| no 	|  	|  	|
+| Study Location 	| Author has stated in the methods section where the study took place or the data’s country/region of origin. 	| yes 	|  	|  	|
+| Author Review 	| The professionalism of the contact information that the author has provided in the manuscript. 	| yes 	|  	|  	|
+| Ethics Statement 	| A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data. 	| yes 	|  	|  	|
+| Funding Statement 	| A statement within the manuscript indicating whether or not the authors received funding for their research. 	| yes 	|  	|  	|
+| Code Availability 	| Authors have shared access to the most updated code that they used in their study, including code used for analysis. 	| no 	|  	|  	|
