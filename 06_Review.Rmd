@@ -1,4 +1,7 @@
 # Open peer review
+```{r echo=F}
+library(knitr)
+```
 
 ## Introduction
 Neural Style Transfer (NST) is een algortime methode om de inhoud van een afbeelding te combineren met de stijl van een andere afbeelding. Het resultaat is een nieuwe afbeelding die de inhoud van de ene afbeelding combineert met de stijl van de andere. Dit methode kan toegepast worden op proefdieren bijvoorbeeld visuele voorkeuren te manipuleren. 
@@ -35,3 +38,35 @@ Van het artikel stelt de hypothese van 'sensory drive' dat dieren signalen ontwi
 | Ethics Statement 	| A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data. 	| yes 	|  	|  	|
 | Funding Statement 	| A statement within the manuscript indicating whether or not the authors received funding for their research. 	| yes 	|  	|  	|
 | Code Availability 	| Authors have shared access to the most updated code that they used in their study, including code used for analysis. 	| no 	|  	|  	|
+
+## R code
+Naast een wetenschappelijke artikel, wordt ook de reproduceerbaarheid van R code papers beoordeelt. In deze review maken we gebruik van het onderzoek van Haley E. Kragness en Laura Cirelli (2022) over het gedrag van baby's om verschillende aspecten, interacties en emotionele reacties tijdens muzikaal concert. Hiervoor wordt er gebruik gemaakt van dit artikel, genaamd ["A concert for babies: Attentional, affective, and motor responses in an infant audience"](https://osf.io/4pqx9/).
+
+Na het bestuderen van het script lijkt het er inderdaad op dat het gaat om een onderzoeksanalyse naar associaties tussen verschillende aspecten tijdens het afspelen van muziek. Het voert statistische analyses uit, zoals correlatietests, en genereert visualisaties. 
+Op schaal van 1(very bad)-5(very good), zou ik het script een 4 geven op basis van leesbaarheid. De codes zijn over het algemeen leesbaar, goed gestructureerd en georganiseerd met comments, maar er kunnen meer comments komen die ook meer uitleggen over de codes.
+
+### Review
+Bij het runnen van het script maar ik tegen aantal kleine errors tegen. Bij het inladen van de data miste er een pad in de set working directory funtie. Dit werd vervolgens verwezen naar de folder 'les4'. Bij de chunk **Demographics** werden de kolommen **Gender** en **BabyMusiClass** niet gevonden als object voor het tellen in de dataframe **df.wide**. **BabyMusiClass** heb ik aangepast naar **df.wide$ BabyMusiClass**. De kolom **Gender** is character en niet een factor, waardoor het tellen moeilijk gaat. Dit heb ik aangepast naar **table(df.wide$Gender)**, zodat je in console de aantallen geslacht te zien krijgt.
+
+Op schaal van 1(very bad)-5(very good), zou ik het script een 4 geven op basis van reproduceerbaarheid. De codes die aangepast moesten worden, waren gemakkelijk op te lossen en begrijpelijk, zoals het verwijzen naar een pad/map. De visualisaties werden als png-bestanden geleverd en de vereiste librarys staan aan het begin van het markdown-bestand.
+
+Hieronder zie je een stukje van het script voor het genereren van een geom_density plot. Dit plot verdient een score van 5 voor reproduceerbaarheid. 
+```{r eval=F}
+
+png("attentionDensity.png", units="in", width=5, height=5, res=300)
+
+dens.perc <- ggplot(df, aes(BabyAttShow.Prop,fill = SongCond, linetype=IntCond),..scaled..) + geom_density(alpha = 0.2)+theme_classic()+
+    scale_linetype_manual(values=c("solid", "dashed"))+
+    scale_fill_manual(values=c("plum4","seagreen3"))+
+    xlab("Proportion of epochs containing looks to show")+
+  ylab("Kernel density")+
+  theme(legend.position = "none")
+
+dens.perc
+dev.off()
+
+
+```
+```{r, echo=FALSE, eval=TRUE, out.width= '60%'}
+knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/bookdown/images/attentionDensity.png")
+```
