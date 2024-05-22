@@ -5,7 +5,7 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-       <li><a href="./">Demo Book</a></li>
+       <li><a href="./">Portfolio Rachel Breuer</a></li>
       after: |
         <li><a target="blank">Published with bookdown</a></li>
 
