@@ -1,7 +1,29 @@
 
 # C. elegans plate experiment
-Uitleg over experiment
-stappenplan
+Het experiment van J. Louter (INT/ILC) gaat over de blootstelling van volwassen C. elegans nematoden aan verschillende concentraties van verschillende verbindingen. De dataset bevat aantal belangrijke variabelen: 
+
+- **RawData**: Het resultaat van het experiment, namelijk het aantal getelde nakomelingen als een geheel getal na een bepaalde incubatietijd.
+- **compName**: De generieke naam van de verbinding/chemische stof.
+- **compConcentration**: De concentratie van de verbinding.
+- **expType**: Het type experiment.
+
+Het doel van dit experiment is het uitvoeren van een dosis-respons analyse met behulp van een log-logistische model. Dit model geeft schattingen voor de maximale respons, de minimale respons, de IC50 concentratie en de helling bij IC50. Voor visualisaties wordt {ggplot2} gebruikt.
+
+## Stappenplan
+- Data Importeren, inspecteren en bewerken:
+Importeer de dataset in R met behulp van het {readxl}-pakket. Inspecteer de dataset en controleer of alles klopt.
+
+- Data analyse: 
+Bereken statistieken van RawData over verschillende concentraties en verbindingen. Maak grafieken van de gegevens zoals een scatterplot.  
+
+- Dosis-Respons Analyse:
+Pas een dosis-responsmodel toe, namelijk log-logistisch model, op de gegevens voor elke verbinding met behulp van het {drc}-pakket. Bereken schattingen voor de maximale respons, de minimale respons, de IC50 concentratie en de helling bij IC50. 
+
+- Vergelijkende Analyse:
+Vergelijk de geschatte parameters en voer statistische testen uit
+
+- Interpretatie en conclusie:
+Interpreteer de resultaten van de analyse en benoem de resultaten met als doel de doelstelling van het experiment te beantwoorden. 
 
 ## Importeren en inspecteren
 ```{r, echo=F}
@@ -45,7 +67,7 @@ ggplot(data = CE_LIQ_FLOW_062_Tidydata, aes(x = log10(compConcentration + 0.01),
        y = "Raw Data Counts", shape = "Experimental type", color = "Compound name")
 ```
 
-De positieve controle voor dit experiment is . De negatieve controle voor dit experiment is .
+De positieve controle voor dit experiment is **Ethanol** . De negatieve controle voor dit experiment is **S-medium**.
 
 ## Normalized data
 ```{r, eval=T, message=F}
