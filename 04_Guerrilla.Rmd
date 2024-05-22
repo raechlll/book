@@ -3,8 +3,10 @@
 knitr::opts_chunk$set(echo = TRUE)
 ```
 # Guerrilla Analytics Principles
-uitleg
 
+## Introductie
+Guerrilla Analytics Principles zijn richtlijnen die helpen om data snel en flexibel te analyseren en de workflow te verbeteren. In deze hoofdstuk gebruiken we het Guerrilla Analytics-framework, zoals uitgelegd door Enda Ridge in zijn boekje. Dit framework biedt een praktische en hands-on benadering voor het opzetten van een datamanagementproces dat zowel individueel als in teamverband effectief is.
+Hieronder wordt een voorbeeld gegeven van de principe met DAUR-II assignments:
 ```{r eval=F}
 library(knitr)
 
@@ -16,7 +18,6 @@ fs::dir_tree(here::here("daur2/Metagenomics"))
 fs::dir_tree(here::here("daur2/Eindopdracht"))
 ```
 
-text
 ```{r, echo=FALSE, eval=TRUE, fig.height=3, out.width= '60%', fig.cap="Folder tree RNA-sequence. De folder tree van RNA-sequence uit DAUR2 is gebaseerd op de Guerrilla Analytics Principle."}
 
 knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/book/images/RNA-tree.png")
@@ -33,3 +34,10 @@ knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portf
 
 knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/book/images/Eind-tree.png")
 ```
+
+
+## Portfolio framework
+```{r echo=F}
+fs::dir_tree("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/book") 
+```
+
