@@ -13,7 +13,7 @@ library(knitr)
 
 ```{r, echo=FALSE, eval=TRUE, fig.height=3, out.width= '70%', fig.cap="Kaplan-Meier plot. De Kaplan-Meier plot van de survival package toont aan de cumulatieve overlevingskansen tegenover tijd."}
 
-knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/bookdown/images/survival_curve.png")
+knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/book/images/survival_curve.png")
 ```
 
 <br/><br/>

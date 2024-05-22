@@ -19,17 +19,17 @@ fs::dir_tree(here::here("daur2/Eindopdracht"))
 text
 ```{r, echo=FALSE, eval=TRUE, fig.height=3, out.width= '60%', fig.cap="Folder tree RNA-sequence. De folder tree van RNA-sequence uit DAUR2 is gebaseerd op de Guerrilla Analytics Principle."}
 
-knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/bookdown/images/RNA-tree.png")
+knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/book/images/RNA-tree.png")
 ```
 
 <br/><br/>
 ```{r, echo=FALSE, eval=TRUE, fig.height=3, out.width= '60%', fig.cap="Folder tree Metagenomics. De folder tree van Metagenomics uit DAUR2 is gebaseerd op de Guerrilla Analytics Principle."}
 
-knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/bookdown/images/Meta-tree.png")
+knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/book/images/Meta-tree.png")
 ```
 
 <br/><br/>
 ```{r, echo=FALSE, eval=TRUE, fig.height=3, out.width= '60%', fig.cap="Folder tree ONECUT1. De folder tree van ONECUT1 uit de eindopdracht van DAUR2 is gebaseerd op de Guerrilla Analytics Principle."}
 
-knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/bookdown/images/Eind-tree.png")
+knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/book/images/Eind-tree.png")
 ```

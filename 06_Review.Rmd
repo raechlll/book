@@ -68,5 +68,5 @@ dev.off()
 
 ```
 ```{r, echo=FALSE, eval=TRUE, out.width= '60%'}
-knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/bookdown/images/attentionDensity.png")
+knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/book/images/attentionDensity.png")
 ```
