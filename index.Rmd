@@ -19,7 +19,3 @@ Welkom op mijn data science page! Mijn naam is Rachel Breuer, en ik ben geïnter
 In mijn portfolio deel ik niet alleen mijn portfolio opdrachten, maar ook mijn persoonlijke progressie als data scientist. Hier laat ik ook zien welk R package ik graag wil leren, namelijk de 'survival' package, en hoe ik dit zal aanpakken met daarnaast de resultaten en codes.
 </body>
 
-
-:::note
-test  `test`.
-:::
