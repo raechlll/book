@@ -12,32 +12,75 @@ Het artikel wordt gescoord met behulp van de 'Repita'-criteria. Door gebruik te 
 
 <br/><br/>
 
-| Transparency Criteria 	| Definition 	| Response Type 	|  	|  	|
-|:---:	|:---:	|:---:	|---	|---	|
-| Study Purpose 	| A concise statement in the introduction of the article, often in the last paragraph, that establishes the reason the research was conducted. Also called the study objective. 	| Binary 	|  	|  	|
-| Data Availability Statement 	| A statement, in an individual section offset from the main body of text, that explains how or if one can access a study’s data. The title of the section may vary, but it must explicitly mention data; it is therefore distinct from a supplementary materials section. 	| Binary 	|  	|  	|
-| Data Location 	| Where the article’s data can be accessed, either raw or processed. 	| Found Value 	|  	|  	|
-| Study Location 	| Author has stated in the methods section where the study took place or the data’s country/region of origin. 	| Binary; Found Value 	|  	|  	|
-| Author Review 	| The professionalism of the contact information that the author has provided in the manuscript. 	| Found Value 	|  	|  	|
-| Ethics Statement 	| A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data. 	| Binary 	|  	|  	|
-| Funding Statement 	| A statement within the manuscript indicating whether or not the authors received funding for their research. 	| Binary 	|  	|  	|
-| Code Availability 	| Authors have shared access to the most updated code that they used in their study, including code used for analysis. 	| Binary 	|  	|  	|
+```{r echo = F}
+library(kableExtra)
+data_table <- data.frame(
+  Transparency_Criteria = c("Study Purpose", 
+                            "Data Availability Statement", 
+                            "Data Location", 
+                            "Study Location", 
+                            "Author Review", 
+                            "Ethics Statement", 
+                            "Funding Statement", 
+                            "Code Availability"),
+  Definition = c("A concise statement in the introduction of the article, often in the last paragraph, that establishes the reason the research was conducted. Also called the study objective.",
+                 "A statement, in an individual section offset from the main body of text, that explains how or if one can access a study’s data. The title of the section may vary, but it must explicitly mention data; it is therefore distinct from a supplementary materials section.",
+                 "Where the article’s data can be accessed, either raw or processed.",
+                 "Author has stated in the methods section where the study took place or the data’s country/region of origin.",
+                 "The professionalism of the contact information that the author has provided in the manuscript.",
+                 "A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data.",
+                 "A statement within the manuscript indicating whether or not the authors received funding for their research.",
+                 "Authors have shared access to the most updated code that they used in their study, including code used for analysis."),
+  Response_Type = c("Binary", 
+                    "Binary", 
+                    "Found Value", 
+                    "Binary; Found Value", 
+                    "Found Value", 
+                    "Binary", 
+                    "Binary", 
+                    "Binary"))
+
+data_table %>%
+  kbl() %>%
+  kable_styling()
+```
 
 ## 'Repita'-criteria
 Van het artikel stelt de hypothese van 'sensory drive' dat dieren signalen ontwikkelen die aangepast zijn aan hun omgeving. De resultaten ondersteunt de hypothese en wijzen erop dat de vissen de neiging hebben om visuele patronen te verkiezen die overeenkomen met hun natuurlijke leefomgeving. Bovendien toont het onderzoek aan dat kunstmatige intelligentie effectief kan worden ingezet om hypotheses over dierlijk gedrag te testen.  Echter, het rapport mist specifieke gegevens die kunnen worden opgenomen om de bevindingen te ondersteunen.
 
 <br/><br/>
+```{r echo = F}
+library(kableExtra)
+data_table <- data.frame(
+  Transparency_Criteria = c("Study Purpose", 
+                            "Data Availability Statement", 
+                            "Data Location", 
+                            "Study Location", 
+                            "Author Review", 
+                            "Ethics Statement", 
+                            "Funding Statement", 
+                            "Code Availability"),
+  Definition = c("A concise statement in the introduction of the article, often in the last paragraph, that establishes the reason the research was conducted. Also called the study objective.",
+                 "A statement, in an individual section offset from the main body of text, that explains how or if one can access a study’s data. The title of the section may vary, but it must explicitly mention data; it is therefore distinct from a supplementary materials section.",
+                 "Where the article’s data can be accessed, either raw or processed.",
+                 "Author has stated in the methods section where the study took place or the data’s country/region of origin.",
+                 "The professionalism of the contact information that the author has provided in the manuscript.",
+                 "A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data.",
+                 "A statement within the manuscript indicating whether or not the authors received funding for their research.",
+                 "Authors have shared access to the most updated code that they used in their study, including code used for analysis."),
+  Response_Type = c("yes", 
+                    "no", 
+                    "DOI: 10.1101/2023.03.13.532060", 
+                    "yes", 
+                    "not in manuscript, but in author information", 
+                    "yes", 
+                    "yes", 
+                    "no"))
 
-| Transparency Criteria 	| Definition 	| Response Type 	|  	|  	|
-|:---:	|:---:	|:---:	|---	|---	|
-| Study Purpose 	| A concise statement in the introduction of the article, often in the last paragraph, that establishes the reason the research was conducted. Also called the study objective. 	| yes 	|  	|  	|
-| Data Availability Statement 	| A statement, in an individual section offset from the main body of text, that explains how or if one can access a study’s data. The title of the section may vary, but it must explicitly mention data; it is therefore distinct from a supplementary materials section. 	| no 	|  	|  	|
-| Data Location 	| Where the article’s data can be accessed, either raw or processed. 	| DOI: 10.1101/2023.03.13.532060 	|  	|  	|
-| Study Location 	| Author has stated in the methods section where the study took place or the data’s country/region of origin. 	| yes 	|  	|  	|
-| Author Review 	| The professionalism of the contact information that the author has provided in the manuscript. 	| not in manuscript, but in author information  	|  	|  	|
-| Ethics Statement 	| A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data. 	| yes 	|  	|  	|
-| Funding Statement 	| A statement within the manuscript indicating whether or not the authors received funding for their research. 	| yes 	|  	|  	|
-| Code Availability 	| Authors have shared access to the most updated code that they used in their study, including code used for analysis. 	| no 	|  	|  	|
+data_table %>%
+  kbl() %>%
+  kable_styling()
+```
 
 ## R code
 Naast een wetenschappelijke artikel, wordt ook de reproduceerbaarheid van R code papers beoordeelt. In deze review maken we gebruik van het onderzoek van Haley E. Kragness en Laura Cirelli (2022) over het gedrag van baby's om verschillende aspecten, interacties en emotionele reacties tijdens muzikaal concert. Hiervoor wordt er gebruik gemaakt van dit artikel, genaamd ["A concert for babies: Attentional, affective, and motor responses in an infant audience"](https://osf.io/4pqx9/).

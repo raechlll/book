@@ -51,6 +51,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <script src="libs/core-js-2.5.3/shim.min.js"></script>
 <script src="libs/react-18.2.0/react.min.js"></script>
 <script src="libs/react-18.2.0/react-dom.min.js"></script>
@@ -214,79 +216,108 @@ In het onderzoek van Hejja-Brichard et al. (2023) wordt NST gebruikt om visuele
 <p>In deze review maken we gebruik van het onderzoek van Hejja-Brichard et al. (2023) over het testen van voorkeur van vissen voor kleurpatronen. Hiervoor wordt er gebruik gemaakt van dit artikel, genaamd <a href="https://www.biorxiv.org/content/10.1101/2023.03.13.532060v2.full">“Using Neural Style Transfer to study the evolution of animal signal design: A case study in an ornamented fish”</a>.
 Het artikel wordt gescoord met behulp van de ‘Repita’-criteria. Door gebruik te maken met de criteria, kunnen we reproduceerbaarheidsproblemen identificeren in wetenschappelijke publicatie.</p>
 <p><br/><br/></p>
-<table style="width:100%;">
-<colgroup>
-<col width="23%" />
-<col width="23%" />
-<col width="23%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
-<tr class="header">
-<th align="center">Transparency Criteria</th>
-<th align="center">Definition</th>
-<th align="center">Response Type</th>
-<th></th>
-<th></th>
+<tr>
+<th style="text-align:left;">
+Transparency_Criteria
+</th>
+<th style="text-align:left;">
+Definition
+</th>
+<th style="text-align:left;">
+Response_Type
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="center">Study Purpose</td>
-<td align="center">A concise statement in the introduction of the article, often in the last paragraph, that establishes the reason the research was conducted. Also called the study objective.</td>
-<td align="center">Binary</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Study Purpose
+</td>
+<td style="text-align:left;">
+A concise statement in the introduction of the article, often in the last paragraph, that establishes the reason the research was conducted. Also called the study objective.
+</td>
+<td style="text-align:left;">
+Binary
+</td>
 </tr>
-<tr class="even">
-<td align="center">Data Availability Statement</td>
-<td align="center">A statement, in an individual section offset from the main body of text, that explains how or if one can access a study’s data. The title of the section may vary, but it must explicitly mention data; it is therefore distinct from a supplementary materials section.</td>
-<td align="center">Binary</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Data Availability Statement
+</td>
+<td style="text-align:left;">
+A statement, in an individual section offset from the main body of text, that explains how or if one can access a study’s data. The title of the section may vary, but it must explicitly mention data; it is therefore distinct from a supplementary materials section.
+</td>
+<td style="text-align:left;">
+Binary
+</td>
 </tr>
-<tr class="odd">
-<td align="center">Data Location</td>
-<td align="center">Where the article’s data can be accessed, either raw or processed.</td>
-<td align="center">Found Value</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Data Location
+</td>
+<td style="text-align:left;">
+Where the article’s data can be accessed, either raw or processed.
+</td>
+<td style="text-align:left;">
+Found Value
+</td>
 </tr>
-<tr class="even">
-<td align="center">Study Location</td>
-<td align="center">Author has stated in the methods section where the study took place or the data’s country/region of origin.</td>
-<td align="center">Binary; Found Value</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Study Location
+</td>
+<td style="text-align:left;">
+Author has stated in the methods section where the study took place or the data’s country/region of origin.
+</td>
+<td style="text-align:left;">
+Binary; Found Value
+</td>
 </tr>
-<tr class="odd">
-<td align="center">Author Review</td>
-<td align="center">The professionalism of the contact information that the author has provided in the manuscript.</td>
-<td align="center">Found Value</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Author Review
+</td>
+<td style="text-align:left;">
+The professionalism of the contact information that the author has provided in the manuscript.
+</td>
+<td style="text-align:left;">
+Found Value
+</td>
 </tr>
-<tr class="even">
-<td align="center">Ethics Statement</td>
-<td align="center">A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data.</td>
-<td align="center">Binary</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Ethics Statement
+</td>
+<td style="text-align:left;">
+A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data.
+</td>
+<td style="text-align:left;">
+Binary
+</td>
 </tr>
-<tr class="odd">
-<td align="center">Funding Statement</td>
-<td align="center">A statement within the manuscript indicating whether or not the authors received funding for their research.</td>
-<td align="center">Binary</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Funding Statement
+</td>
+<td style="text-align:left;">
+A statement within the manuscript indicating whether or not the authors received funding for their research.
+</td>
+<td style="text-align:left;">
+Binary
+</td>
 </tr>
-<tr class="even">
-<td align="center">Code Availability</td>
-<td align="center">Authors have shared access to the most updated code that they used in their study, including code used for analysis.</td>
-<td align="center">Binary</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Code Availability
+</td>
+<td style="text-align:left;">
+Authors have shared access to the most updated code that they used in their study, including code used for analysis.
+</td>
+<td style="text-align:left;">
+Binary
+</td>
 </tr>
 </tbody>
 </table>
@@ -294,80 +325,109 @@ Het artikel wordt gescoord met behulp van de ‘Repita’-criteria. Door gebruik
 <div id="repita-criteria" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> ‘Repita’-criteria<a href="open-peer-review.html#repita-criteria" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Van het artikel stelt de hypothese van ‘sensory drive’ dat dieren signalen ontwikkelen die aangepast zijn aan hun omgeving. De resultaten ondersteunt de hypothese en wijzen erop dat de vissen de neiging hebben om visuele patronen te verkiezen die overeenkomen met hun natuurlijke leefomgeving. Bovendien toont het onderzoek aan dat kunstmatige intelligentie effectief kan worden ingezet om hypotheses over dierlijk gedrag te testen. Echter, het rapport mist specifieke gegevens die kunnen worden opgenomen om de bevindingen te ondersteunen.</p>
-<p><br/><br/></p>
-<table style="width:100%;">
-<colgroup>
-<col width="23%" />
-<col width="23%" />
-<col width="23%" />
-<col width="14%" />
-<col width="14%" />
-</colgroup>
+<br/><br/>
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
-<tr class="header">
-<th align="center">Transparency Criteria</th>
-<th align="center">Definition</th>
-<th align="center">Response Type</th>
-<th></th>
-<th></th>
+<tr>
+<th style="text-align:left;">
+Transparency_Criteria
+</th>
+<th style="text-align:left;">
+Definition
+</th>
+<th style="text-align:left;">
+Response_Type
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="center">Study Purpose</td>
-<td align="center">A concise statement in the introduction of the article, often in the last paragraph, that establishes the reason the research was conducted. Also called the study objective.</td>
-<td align="center">yes</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Study Purpose
+</td>
+<td style="text-align:left;">
+A concise statement in the introduction of the article, often in the last paragraph, that establishes the reason the research was conducted. Also called the study objective.
+</td>
+<td style="text-align:left;">
+yes
+</td>
 </tr>
-<tr class="even">
-<td align="center">Data Availability Statement</td>
-<td align="center">A statement, in an individual section offset from the main body of text, that explains how or if one can access a study’s data. The title of the section may vary, but it must explicitly mention data; it is therefore distinct from a supplementary materials section.</td>
-<td align="center">no</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Data Availability Statement
+</td>
+<td style="text-align:left;">
+A statement, in an individual section offset from the main body of text, that explains how or if one can access a study’s data. The title of the section may vary, but it must explicitly mention data; it is therefore distinct from a supplementary materials section.
+</td>
+<td style="text-align:left;">
+no
+</td>
 </tr>
-<tr class="odd">
-<td align="center">Data Location</td>
-<td align="center">Where the article’s data can be accessed, either raw or processed.</td>
-<td align="center">DOI: 10.1101/2023.03.13.532060</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Data Location
+</td>
+<td style="text-align:left;">
+Where the article’s data can be accessed, either raw or processed.
+</td>
+<td style="text-align:left;">
+DOI: 10.1101/2023.03.13.532060
+</td>
 </tr>
-<tr class="even">
-<td align="center">Study Location</td>
-<td align="center">Author has stated in the methods section where the study took place or the data’s country/region of origin.</td>
-<td align="center">yes</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Study Location
+</td>
+<td style="text-align:left;">
+Author has stated in the methods section where the study took place or the data’s country/region of origin.
+</td>
+<td style="text-align:left;">
+yes
+</td>
 </tr>
-<tr class="odd">
-<td align="center">Author Review</td>
-<td align="center">The professionalism of the contact information that the author has provided in the manuscript.</td>
-<td align="center">not in manuscript, but in author information</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Author Review
+</td>
+<td style="text-align:left;">
+The professionalism of the contact information that the author has provided in the manuscript.
+</td>
+<td style="text-align:left;">
+not in manuscript, but in author information
+</td>
 </tr>
-<tr class="even">
-<td align="center">Ethics Statement</td>
-<td align="center">A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data.</td>
-<td align="center">yes</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Ethics Statement
+</td>
+<td style="text-align:left;">
+A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data.
+</td>
+<td style="text-align:left;">
+yes
+</td>
 </tr>
-<tr class="odd">
-<td align="center">Funding Statement</td>
-<td align="center">A statement within the manuscript indicating whether or not the authors received funding for their research.</td>
-<td align="center">yes</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Funding Statement
+</td>
+<td style="text-align:left;">
+A statement within the manuscript indicating whether or not the authors received funding for their research.
+</td>
+<td style="text-align:left;">
+yes
+</td>
 </tr>
-<tr class="even">
-<td align="center">Code Availability</td>
-<td align="center">Authors have shared access to the most updated code that they used in their study, including code used for analysis.</td>
-<td align="center">no</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:left;">
+Code Availability
+</td>
+<td style="text-align:left;">
+Authors have shared access to the most updated code that they used in their study, including code used for analysis.
+</td>
+<td style="text-align:left;">
+no
+</td>
 </tr>
 </tbody>
 </table>

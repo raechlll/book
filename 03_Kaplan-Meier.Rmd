@@ -19,9 +19,17 @@ knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portf
 <br/><br/>
 Om de 'survival' package in vier dagen te leren ga ik de volgende doen. Ten eerste ga ik papers en workflows opzoeken over de package. Met de informatie kan ik kennis vergroten en opzoeken wat ik nodig heb in de datasets. Een paper die ik ga bestuderen is bijvoorbeeld https://cran.r-project.org/web/packages/survival/vignettes/survival.pdf. Ik ga op de internet nepdata of bestaande data opzoeken die gerelateerd is op onderzoeken van ziektes met overlevingskans of periode van overlijding. Ook ga ik op YouTube video's zoeken met uitleg over de gebruik van de package. 
 
-| Dag 	| Planning 	|  	|  	|  	|
-|---	|---	|---	|---	|---	|
-| Dag 1  	| Inlezen van meerdere papers en websites met voorbeelden 	|  	|  	|  	|
-| Dag 2 	| Bekijken van YouTube video's en zoeken naar workflows  	|  	|  	|  	|
-| Dag 3 	| Zoeken van nepdata en begin maken met een script 	|  	|  	|  	|
-| Dag 4 	| Verder aan script werken 	|  	|  	|  	|
+```{r echo = F}
+library(kableExtra)
+
+table_plan <- data.frame(
+  Dag = c("Dag 1", "Dag 2", "Dag 3", "Dag 4"),
+  Planning = c("Inlezen van meerdere papers en websites met voorbeelden",
+               "Bekijken van YouTube video's en zoeken naar workflows",
+               "Zoeken van nepdata en begin maken met een script",
+               "Verder aan script werken"))
+
+table_plan %>%
+  kbl() %>%
+  kable_styling()
+```
