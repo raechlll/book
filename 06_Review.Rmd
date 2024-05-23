@@ -32,9 +32,9 @@ Van het artikel stelt de hypothese van 'sensory drive' dat dieren signalen ontwi
 |:---:	|:---:	|:---:	|---	|---	|
 | Study Purpose 	| A concise statement in the introduction of the article, often in the last paragraph, that establishes the reason the research was conducted. Also called the study objective. 	| yes 	|  	|  	|
 | Data Availability Statement 	| A statement, in an individual section offset from the main body of text, that explains how or if one can access a study’s data. The title of the section may vary, but it must explicitly mention data; it is therefore distinct from a supplementary materials section. 	| no 	|  	|  	|
-| Data Location 	| Where the article’s data can be accessed, either raw or processed. 	| no 	|  	|  	|
+| Data Location 	| Where the article’s data can be accessed, either raw or processed. 	| DOI: 10.1101/2023.03.13.532060 	|  	|  	|
 | Study Location 	| Author has stated in the methods section where the study took place or the data’s country/region of origin. 	| yes 	|  	|  	|
-| Author Review 	| The professionalism of the contact information that the author has provided in the manuscript. 	| yes 	|  	|  	|
+| Author Review 	| The professionalism of the contact information that the author has provided in the manuscript. 	| not in manuscript, but in author information  	|  	|  	|
 | Ethics Statement 	| A statement within the manuscript indicating any ethical concerns, including the presence of sensitive data. 	| yes 	|  	|  	|
 | Funding Statement 	| A statement within the manuscript indicating whether or not the authors received funding for their research. 	| yes 	|  	|  	|
 | Code Availability 	| Authors have shared access to the most updated code that they used in their study, including code used for analysis. 	| no 	|  	|  	|
