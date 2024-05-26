@@ -1,5 +1,5 @@
 # Parameterized report COVID-19
-Met de data van het European Center for Disease Control (ECDC) wordt een parameterized rapport gemaakt van COVID-19 cases. Het rapport wordt gemaakt op basis van de drie parameters:
+Met de data van het European Center for Disease Control (ECDC) wordt een parameterized rapport gemaakt van COVID-19 cases [@noauthor_data_2022]. Het rapport wordt gemaakt op basis van de drie parameters:
 
 -  Het land waarop het rapport van toepassing is
 
