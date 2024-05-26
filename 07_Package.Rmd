@@ -1,6 +1,6 @@
 # R packages (package.rb)
 
-**Package.rb** biedt een verzameling functies om verschillende eenheden om te zetten, waaronder gewicht, lengte en temperatuur. Bovendien bevat het ook functies voor eenvoudige molberekeningen.
+**Package.rb** biedt een reeks functies die kunnen worden gebruikt voor het omzetten van verschillende eenheden, waaronder gewicht, lengte en temperatuur. Daarnaast bevat het ook de functie voor het uitvoeren van eenvoudige molberekeningen. Bij het ontwikkelen van dit nieuwe R-pakket is een demo genaamd The Whole Game gebruikt [@noauthor_r_nodate].
 
 ## Installatie {-}
 De volgende packages zijn vereist:

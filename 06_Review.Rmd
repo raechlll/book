@@ -5,9 +5,9 @@ library(knitr)
 
 ## Introduction {-}
 Neural Style Transfer (NST) is een algortime methode om de inhoud van een afbeelding te combineren met de stijl van een andere afbeelding. Het resultaat is een nieuwe afbeelding die de inhoud van de ene afbeelding combineert met de stijl van de andere. Dit methode kan toegepast worden op proefdieren bijvoorbeeld visuele voorkeuren te manipuleren. 
-In het onderzoek van Hejja-Brichard et al. (2023) wordt NST gebruikt om visuele voorkeuren van vissen te bestuderen door patronen van vissen te manipuleren. De studie onderzoekt de evolutie van dierlijke signaalontwerpen en de aantrekkelijkheid van visuele signalen in relatie tot hun natuurlijke habitat.
+In het onderzoek van @hejja-brichard_using_2024 wordt NST gebruikt om visuele voorkeuren van vissen te bestuderen door patronen van vissen te manipuleren. De studie onderzoekt de evolutie van dierlijke signaalontwerpen en de aantrekkelijkheid van visuele signalen in relatie tot hun natuurlijke habitat.
 
-In deze review maken we gebruik van het onderzoek van Hejja-Brichard et al. (2023) over het testen van voorkeur van vissen voor kleurpatronen [@hejja-brichard_using_2024]. Hiervoor wordt er gebruik gemaakt van dit artikel, genaamd "Using Neural Style Transfer to study the evolution of animal signal design: A case study in an ornamented fish".
+In deze review maken we gebruik van het onderzoek van Hejja-Brichard over het testen van voorkeur van vissen voor kleurpatronen. Hiervoor wordt er gebruik gemaakt van dit artikel, genaamd "Using Neural Style Transfer to study the evolution of animal signal design: A case study in an ornamented fish".
 Het artikel wordt gescoord met behulp van de 'Repita'-criteria. Door gebruik te maken met de criteria, kunnen we reproduceerbaarheidsproblemen identificeren in wetenschappelijke publicatie.
 
 <br/><br/>
@@ -83,7 +83,7 @@ data_table %>%
 ```
 
 ## R code {-}
-Naast een wetenschappelijke artikel, wordt ook de reproduceerbaarheid van R code papers beoordeelt. In deze review maken we gebruik van het onderzoek van Haley E. Kragness en Laura Cirelli (2022) over het gedrag van baby's om verschillende aspecten, interacties en emotionele reacties tijdens muzikaal concert [@kragness_data_2021]. Hiervoor wordt er gebruik gemaakt van dit artikel, genaamd "A concert for babies: Attentional, affective, and motor responses in an infant audience".
+Naast een wetenschappelijke artikel, wordt ook de reproduceerbaarheid van R code papers beoordeelt. In deze review maken we gebruik van het onderzoek van @kragness_data_2021 over het gedrag van baby's om verschillende aspecten, interacties en emotionele reacties tijdens muzikaal concert. Hiervoor wordt er gebruik gemaakt van dit artikel, genaamd "A concert for babies: Attentional, affective, and motor responses in an infant audience".
 
 Na het bestuderen van het script lijkt het er inderdaad op dat het gaat om een onderzoeksanalyse naar associaties tussen verschillende aspecten tijdens het afspelen van muziek. Het voert statistische analyses uit, zoals correlatietests, en genereert visualisaties. 
 Op schaal van 1(very bad)-5(very good), zou ik het script een 4 geven op basis van leesbaarheid. De codes zijn over het algemeen leesbaar, goed gestructureerd en georganiseerd met comments, maar er kunnen meer comments komen die ook meer uitleggen over de codes.
