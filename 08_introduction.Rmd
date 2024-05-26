@@ -1,10 +1,10 @@
 
 # Project antimicrobiële resistentie
 
-## Introductie
+## Introductie {-}
 In opdracht van het Rijksinstituut voor Volksgezondheid en Milieu (RIVM), voor opdrachtgever Gijs Teunis, werk ik samen met mijn projectgroep aan de verbetering en uitbreiding van de R Shiny-app voor het visualiseren van bacteriële antimicrobiële resistentie (AMR). Het doel van het project is om de verspreiding van AMR-genen te visualiseren en deze weer te geven op een kaart van Nederland. Ons team is verantwoordelijk voor het toevoegen van epidemiologische data en het gebruiksvriendelijk maken van de app, zodat gebruikers isolaten kunnen vergelijken met de dataset.
 
-## Antimicrobiële resistentie
+## Antimicrobiële resistentie {-}
 De opkomst van bacteriële AMR, waarbij micro-organismen niet meer reageren op antimicrobiële middelen, waardoor infecties moeilijk of onmogelijk te behandelen zijn, wordt beschouwd als een van de belangrijkste gevaren voor de volksgezondheid in de 21e eeuw. Het groeiende wereldwijde probleem van AMR bedreigt ernstig de volksgezondheid [@murray_global_2022]. De verspreiding van resistente bacteriën wordt verergerd door overmatig gebruik van antibiotica en de overdracht van resistente genen via mobiele genetische elementen [@zhu_clinical_2022]. Volgens het Review on Antimicrobial Resistance, uitgevoerd in opdracht van de Britse regering, wordt deze trend onderstreept door schattingen die aangeven dat AMR tegen 2050 mogelijk jaarlijks 10 miljoen mensen wereldwijd zal doden. Dit benadrukt de dringende noodzaak van een gecoördineerd wereldwijd actieplan, hoewel de ware last van resistentie moeilijk te bepalen is, vooral op plaatsen met beperkte surveillance en gegevens.
 
 Het begrijpen van deze last en het identificeren van de belangrijkste combinaties van pathogenen en geneesmiddelen is cruciaal voor het ontwikkelen van effectieve beleidsmaatregelen en interventies. Dit omvat maatregelen zoals infectiepreventie- en controleprogramma's, toegang tot essentiële antibiotica, en onderzoek en ontwikkeling van nieuwe vaccins en antibiotica. Ook moeten we AMR kunnen neutraliseren met behulp van bacteriële gemeenschappen. Het resistoom, de verzameling resistentiegenen, kan zich in het bacteriële genoom of op plasmiden bevinden. Plasmiden worden tussen bacteriën uitgewisseld, wat de verspreiding van AMR vergroot.
@@ -13,7 +13,7 @@ In 2019 waren naar schatting 1,27 miljoen sterfgevallen direct toe te schrijven 
 
 Het gebrek aan volledige gegevens, vooral in gebieden met beperkte middelen, vormt een uitdaging bij het aanpakken van AMR. Het uitbreiden van laboratoriumcapaciteit en gegevensverzamelingssystemen is essentieel, evenals een beter begrip van AMR-mechanismen en de ontwikkeling van snelle diagnostische tests voor effectieve behandelingen.
 
-## R shiny-app
+## R shiny-app {-}
 R Shiny is een framework voor het maken van interactieve webapplicaties met de programmeertaal R. Het stelt gebruikers in staat om data-gedreven webapplicaties te ontwikkelen zonder uitgebreide kennis van webtechnologieën zoals HTML, CSS en JavaScript. Met R Shiny kunnen datawetenschappers en ontwikkelaars complexe en interactieve applicaties bouwen door de kracht van R voor data-analyse en visualisatie te benutten. De applicatie kan voor diverse doeleinden worden gebruikt, zoals datavisualisatie, data-analyse en rapportage [@wickham_welcome_nodate].
 
 In ons project is het onze taak om epidemiologische data, zoals patiëntgegevens, te visualiseren. Met behulp van de R Shiny-app kunnen we bijvoorbeeld een interactieve kaart van Nederland maken waarop patiëntgegevens worden weergegeven.

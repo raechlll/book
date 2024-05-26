@@ -9,13 +9,13 @@ Met de data van het European Center for Disease Control (ECDC) wordt een paramet
 
 Hiervoor wordt er gebruik gemaakt van ECDC COVID-19 gegevens: [ECDC data](https://www.ecdc.europa.eu/en/publications-data/data-daily-new-cases-covid-19-eueea-country).
 
-## Param lijst 
+## Parametrisatie lijst {-}
 
 - selecteer_land: param$selecteer_land
 
 - selecteer_jaar: param$selecteer_jaar
 
-## Importeren en inspecteren
+## Importeren en inspecteren {-}
 ```{r, echo=F, message=F}
 library(readr)
 # importeren data
@@ -25,7 +25,7 @@ library(reactable)
 reactable(covid_data, defaultPageSize =10, compact = TRUE)
 ```
 
-## Lijngrafiek Nederland, Frankrijk en Spanje
+## Lijngrafiek Nederland, Frankrijk en Spanje {-}
 Met de ECDC COVID-19 gegevens is er een visuele weergave van COVID-19 cases en deaths in geselecteerde landen en jaargetallen. De grafieken tonen het aantal cases en deaths per datum. Door gebruik te maken van parametrisatie in de R-code met `params$`, kan dit rapport eenvoudig aangepast worden aan specifieke interesses zonder dat je de onderliggende code hoeft te wijzigen.
 ```{r, echo=F, message=F, fig.cap= "Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Nederland, Frankrijk en Spanje."}
 library(ggplot2)
@@ -63,7 +63,7 @@ print(deaths_plot)
 
 ```
 
-## Lijngrafiek Roemenië, Noorwegen en Italië
+## Lijngrafiek Roemenië, Noorwegen en Italië {-}
 Om te controleren of de parametrisatie correct functioneert, kan je de waarden in de parameterlijst aanpassen. In dit voorbeeld worden de landen Roemenië, Noorwegen en Italië gebruikt en het jaar 2021.
 ```{r, echo=F, message=F, fig.cap= "Lijngrafiek van COVID-19 data, waarbij de datum in jaar en maand op de x-as staat, de aantal cases op de y-as. Verschillende kleuren vertegenwoordigen geselecteerde landen Roemenië, Noorwegen en Italië."}
 library(ggplot2)

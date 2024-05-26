@@ -1,10 +1,6 @@
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 # Guerrilla Analytics Principles
 
-## Introductie
+## Introductie {-}
 Guerrilla Analytics Principles zijn richtlijnen die helpen om data snel en flexibel te analyseren en de workflow te verbeteren. In deze hoofdstuk gebruiken we het Guerrilla Analytics-framework, zoals uitgelegd door Enda Ridge. Dit framework biedt een praktische en hands-on benadering voor het opzetten van een datamanagementproces dat zowel individueel als in teamverband effectief is.
 Hieronder wordt een voorbeeld gegeven van de principe met DAUR-II assignments:
 ```{r eval=F}
@@ -36,7 +32,7 @@ knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portf
 ```
 
 
-## Portfolio framework
+## Portfolio framework {-}
 ```{r echo=F}
 fs::dir_tree("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/book") 
 ```

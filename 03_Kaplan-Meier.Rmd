@@ -1,7 +1,3 @@
-
-```{r plot, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 # Survival package
 Over twee jaar wil ik me graag bezighouden met onderzoek over haematologie of oncologie, in combinatie met data science en zoölogie. Bij de minor Data Science leer ik verschillende vaardigheden en technieken, waardoor ik dit kan toepassen in mijn afstudeerstage en later in mijn werk. Ik zou graag willen werken bij een ziekenhuis of universiteit, met name onderzoek over ziektes en medicijnen. Voor mijn afstudeerstage zou ik graag onderzoek willen doen met proefdieren en medicijnen. Met Data Science kunnen we gegevens analyseren en inzichten uit halen, zoals verbeteren van diagnoses en ontdekken van nieuwe manieren om ziektes/ te bestrijden. 
 

@@ -2,7 +2,7 @@
 
 **Package.rb** biedt een verzameling functies om verschillende eenheden om te zetten, waaronder gewicht, lengte en temperatuur. Bovendien bevat het ook functies voor eenvoudige molberekeningen.
 
-## Installatie
+## Installatie {-}
 De volgende packages zijn vereist:
 
 - utils
@@ -20,12 +20,12 @@ Je kunt de ontwikkelversie van package.rb installeren vanaf
 
 - devtools::install_github("raechlll/package.rb")
 
-## Gebruik
+## Gebruik {-}
 
 Bij het werken met metingen zoals lengte, gewicht, temperatuur, en zelfs molberekeningen, is het vaak nodig om tussen verschillende eenheden om te zetten. Hier komt het **package.rb** package van pas.
 Met **package.rb** kun je eenvoudig metingen omzetten tussen verschillende eenheden voor lengte, gewicht en temperatuur. Bovendien biedt het ook molberekeningsfuncties, waarmee je het aantal mol van een stof kunt berekenen op basis van de gegeven massa en molaire massa.
 
-## Functies
+## Functies {-}
 
 :::note
 
@@ -88,7 +88,7 @@ Met **package.rb** kun je eenvoudig metingen omzetten tussen verschillende eenhe
 
 :::
 
-## Voorbeeld
+## Voorbeeld {-}
 Hier is een voorbeeld van hoe je **package.rb** kunt gebruiken om zowel metingen om te zetten als molberekeningen uit te voeren:
 
 ``` {r eval=F}

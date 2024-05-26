@@ -7,17 +7,17 @@ Het experiment van J. Louter (INT/ILC) gaat over de blootstelling van volwassen 
 - **compConcentration**: De concentratie van de verbinding.
 - **expType**: Het type experiment.
 
-Het doel van dit experiment is het uitvoeren van een dosis-respons analyse met behulp van een log-logistische model. Dit model geeft schattingen voor de maximale respons, de minimale respons, de IC50 concentratie en de helling bij IC50. Voor visualisaties wordt {ggplot2} gebruikt.
+Het doel van dit experiment is het uitvoeren van een dosis-respons analyse met behulp van een log-logistische model. Dit model geeft schattingen voor de maximale respons, de minimale respons, de IC50 concentratie en de helling bij IC50. Voor visualisaties wordt `ggplot2` gebruikt.
 
-## Stappenplan
+## Stappenplan {-}
 - Data Importeren, inspecteren en bewerken:
-Importeer de dataset in R met behulp van het {readxl}-pakket. Inspecteer de dataset en controleer of alles klopt.
+Importeer de dataset in R met behulp van het `readxl`-pakket. Inspecteer de dataset en controleer of alles klopt.
 
 - Data analyse: 
 Bereken statistieken van RawData over verschillende concentraties en verbindingen. Maak grafieken van de gegevens zoals een scatterplot.  
 
 - Dosis-Respons Analyse:
-Pas een dosis-responsmodel toe, namelijk log-logistisch model, op de gegevens voor elke verbinding met behulp van het {drc}-pakket. Bereken schattingen voor de maximale respons, de minimale respons, de IC50 concentratie en de helling bij IC50. 
+Pas een dosis-responsmodel toe, namelijk log-logistisch model, op de gegevens voor elke verbinding met behulp van het `drc`-pakket. Bereken schattingen voor de maximale respons, de minimale respons, de IC50 concentratie en de helling bij IC50. 
 
 - Vergelijkende Analyse:
 Vergelijk de geschatte parameters en voer statistische testen uit
@@ -25,7 +25,7 @@ Vergelijk de geschatte parameters en voer statistische testen uit
 - Interpretatie en conclusie:
 Interpreteer de resultaten van de analyse en benoem de resultaten met als doel de doelstelling van het experiment te beantwoorden. 
 
-## Importeren en inspecteren
+## Importeren en inspecteren {-}
 ```{r, echo=F}
 library(readxl)
 # Import excel file
@@ -36,7 +36,7 @@ library(reactable)
 reactable(CE_LIQ_FLOW_062_Tidydata, defaultPageSize =5, compact = TRUE)
 ```
 
-## Scatterplot
+## Scatterplot {-}
 ```{r, eval=T, message=F}
 library(ggplot2)
 library(dplyr)
@@ -69,7 +69,7 @@ ggplot(data = CE_LIQ_FLOW_062_Tidydata, aes(x = log10(compConcentration + 0.01),
 
 De positieve controle voor dit experiment is **Ethanol** . De negatieve controle voor dit experiment is **S-medium**.
 
-## Normalized data
+## Normalized data {-}
 ```{r, eval=T, message=F}
 # Calculate mean value of controlNegative
 controlNegative <- CE_LIQ_FLOW_062_Tidydata %>% filter(CE_LIQ_FLOW_062_Tidydata$expType == "controlNegative")
@@ -88,7 +88,7 @@ controlNegative_mean <- mean(controlNegative$normalized)
 controlNegative_mean
 ```
 
-### Scatterplot normalized data
+### Scatterplot normalized data {-}
 ```{r, echo=F, eval=T, fig.cap= "Scatterplot van genormaliseerde data voor CE.LIQ.FLOW.062_Tidydata.xlsx waarbij de concentratie van de verbinding op de x-as staat, de genormaliseerde ruwe data tellingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes."}
 
 ggplot(data = CE_LIQ_FLOW_062_Tidydata, aes(x = log10(compConcentration + 0.01), y = normalized, color = compName, shape = expType)) +
