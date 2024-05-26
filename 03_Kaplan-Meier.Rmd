@@ -1,19 +1,18 @@
 # Survival package
+
+## Introductie {-}
 Over twee jaar wil ik me graag bezighouden met onderzoek over haematologie of oncologie, in combinatie met data science en zoölogie. Bij de minor Data Science leer ik verschillende vaardigheden en technieken, waardoor ik dit kan toepassen in mijn afstudeerstage en later in mijn werk. Ik zou graag willen werken bij een ziekenhuis of universiteit, met name onderzoek over ziektes en medicijnen. Voor mijn afstudeerstage zou ik graag onderzoek willen doen met proefdieren en medicijnen. Met Data Science kunnen we gegevens analyseren en inzichten uit halen, zoals verbeteren van diagnoses en ontdekken van nieuwe manieren om ziektes/ te bestrijden. 
 
-Een nieuwe skill die ik graag wil leren is het visualiseren van data. Door nieuwe visualisatietools te ontdekken en toe te passen, zou ik in staat zijn om een nieuw type grafiek te maken en het visualiseren van mijn gegevens te vergemakkelijken. Voor de vrije ruimte ga ik de 'survival' package van R leren. 'Survival' package wordt gebruikt voor het visualiseren van overleveingsanalyses. Met deze package kan je de tijd tot overlijden of optreden van ziektes bestuderen. Dit is handig voor mijn afstudeerstage en op de werkveld. Met behulp van deze skill kan ik met interesse van haematologie/oncologie de verkregen data beter analyseren en gemakkelijker visualiseren.  
-
-```{r echo=F}
-library(knitr)
-```
+Een nieuwe skill die ik graag wil leren is het visualiseren van data. Door nieuwe visualisatietools te ontdekken en toe te passen, zou ik in staat zijn om een nieuw type grafiek te maken en het visualiseren van mijn gegevens te vergemakkelijken. Voor de vrije ruimte ga ik de `survival` package van R leren. `Survival` package wordt gebruikt voor het visualiseren van overleveingsanalyses. Met deze package kan je de tijd tot overlijden of optreden van ziektes bestuderen. Dit is handig voor mijn afstudeerstage en op de werkveld. Met behulp van deze skill kan ik met interesse van haematologie/oncologie de verkregen data beter analyseren en gemakkelijker visualiseren.  
 
 ```{r, echo=FALSE, eval=TRUE, fig.height=3, out.width= '70%', fig.cap="Kaplan-Meier plot. De Kaplan-Meier plot van de survival package toont aan de cumulatieve overlevingskansen tegenover tijd."}
+library(knitr)
 
 knitr::include_graphics("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/book/images/survival_curve.png")
 ```
 
 <br/><br/>
-Om de 'survival' package in vier dagen te leren ga ik de volgende doen. Ten eerste ga ik papers en workflows opzoeken over de package. Met de informatie kan ik kennis vergroten en opzoeken wat ik nodig heb in de datasets. Een paper die ik ga bestuderen is bijvoorbeeld https://cran.r-project.org/web/packages/survival/vignettes/survival.pdf. Ik ga op de internet nepdata of bestaande data opzoeken die gerelateerd is op onderzoeken van ziektes met overlevingskans of periode van overlijding. Ook ga ik op YouTube video's zoeken met uitleg over de gebruik van de package. 
+Om de `survival` package in vier dagen te leren, heb ik de volgende gedaan.Ten eerste heb ik papers en workflows opgezocht over de package, waaronder de website van @noauthor_survminer_nodate, waar ik de survival data anylyse heb bestudeerd en visualiseerd. Deze website bood voorbeelden en verschillende functie aan van de package. Daarnaast heb ik een paper van [Therneau (2024)](https://cran.r-project.org/web/packages/survival/vignettes/survival.pdf) bestudeerd, genaamd 'A package for survival analysis in R'. Ik ging op de internet nepdata of bestaande data opzoeken die gerelateerd is op onderzoeken van ziektes met overlevingskans of periode van overlijding. Vervolgens heb ik een paper van @finnstats_log_2021 gelezen voor uitleg over de log-rank test in R. Met deze functie kan statische testen uitgevoerd worden. 
 
 ```{r echo = F}
 library(kableExtra)
@@ -29,3 +28,149 @@ table_plan %>%
   kbl() %>%
   kable_styling()
 ```
+
+
+## Dataset {-}
+Hiervoor wordt er gebruik gemaakt van Heart Failure Prediction gegevens van Kaggle website: [Heart Failure](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction).
+
+```{r, echo=F, message=F}
+library(readr)
+
+# importeer data
+heart_data <- read_csv("C:/Users/Rachel/Documents/Rstudio/dsfb2_workflows_portfolio/portfolio/data/heart_failure_clinical_records_dataset.csv")
+
+# view tabel
+library(reactable)
+reactable(heart_data, defaultPageSize =10, compact = TRUE)
+```
+
+### Metadata {-}
+
+- Leeftijd: leeftijd van de patiënt [jaren]
+
+- Bloedarmoede: afname van rode bloedcellen of hemoglobine [0: False, 1: True]
+
+- Creatinine fosfokinase (CPK): niveau van het CPK-enzym in het bloed [mcg/L]
+
+- Diabetes: of de patiënt diabetes heeft [0: False, 1: True]
+
+- Ejectiefractie: percentage bloed dat bij elke hartslag het hart verlaat [Percentage]
+
+- Hoge bloeddruk: of de patiënt hypertensie heeft [0: False, 1: True]
+
+- Bloedplaatjes: bloedplaatjes in het bloed [kiloplatelets/mL]
+
+- Geslacht: Vrouw of man [0: vrouw, 1: man]
+
+- Serumcreatinine: niveau van serumcreatinine in het bloed [mg/dL]
+
+- Serumnatrium: niveau van serumnatrium in het bloed [mEq/L]
+
+- Roken: of de patiënt rookt of niet [0: False, 1: True]
+
+- Tijd: Follow-up periode [Dagen]
+
+- Overlijdensgebeurtenis: of de patiënt is overleden tijdens de follow-up periode [0: False, 1: True]
+
+## Kaplan-Meier {-}
+Hieronder is de Kaplan-Meier plot gebaseerd op de data Heart Failure Prediction:
+```{r echo=F, message=F, fig.cap= "Kaplan-Meier plot van de data Heart Failure Prediction, waarbij de tijd in dagen op de x-as staat, de overlevingskans op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes."}
+library(tidyverse)
+library(survival)
+library(ggsurvfit)
+library(survminer)
+
+# NA verwijderen uit tabel
+heart_data <- na.omit(heart_data)
+
+# maak survival object
+surv_obj <- Surv(heart_data$time, heart_data$DEATH_EVENT)
+survival_obj <- survfit(Surv(time, DEATH_EVENT) ~ 1, data = heart_data)
+
+# plot Kaplan-Meier
+ggsurvplot(survival_obj, data = heart_data, 
+           conf.int = TRUE, # voeg betrouwbaarheidsinterval toe
+           risk.table = TRUE, # voeg risicotabel toe
+          title = "Kaplan-Meier Overlevingscurve",
+          xlab = "Tijd (dagen)", ylab = "Geschatte overlevingskans",
+          legend.title = "Groep", legend.labs = c("Alles"),
+          palette = c('#00AFBB'))
+
+```
+De resultaat van figuur 2.2 toont de geschatte overlevingskansen van patiënten met hartflaen over tijd. Uit de grafiek blijkt dat de overlevingskans afneemt naarmate de tijd vordert. De curve begint bij een survival waarschijnlijkheid van 1 (of 100%) en daalt geleidelijk naarmate meer sterfgevallen plaatsvinden. Dit leidt op een toenemend aantal sterfgevallen. na circa 200 dagen vlakt de curve af, wat aangeeft ddat de overlevingskansen van de patiënten die deze periode hebben overleefd, stabieler worden. Echter, blijft er nog steeds een risico op overlijden. 
+
+### Kaplan-Meier geslacht {-}
+```{r echo=F, message=F, fig.height=7, fig.cap= "Kaplan-Meier plot van de data Heart Failure Prediction gebaseerd op geslacht, waarbij de tijd in dagen op de x-as staat, de overlevingskans op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes."}
+# maak survival geslacht object
+survival_sex <- survfit(Surv(time, DEATH_EVENT) ~ sex, data = heart_data)
+
+# plot Kaplan-Meier bij geslacht
+ggsurvplot(survival_sex, data = heart_data, pval = TRUE, # voeg p-waarde toe
+           conf.int = TRUE, # voeg betrouwbaarheidsinterval toe
+            risk.table = TRUE, # voeg risicotabel toe
+           risk.table.col = "sex",
+          title = "Kaplan-Meier Overlevingscurve bij geslacht",
+          xlab = "Tijd (dagen)", ylab = "Geschatte overlevingskans",
+          legend.title = "Geslacht", legend.labs = c("Man", "Vrouw"),
+          palette = c('#00AFBB', '#EA899A'))
+```
+De resultaat van figuur 2.3 toont de geschatte overlevingskansen van patiënten met hartflaen over tijd bij geslacht. Uit de grafiek blijkt dat bij mannen over het algemeen een iets grotere kans hebben om te overleven dan vrouwen, zowel in de beginperiode als aan het eindeperiode. Echter, bij het bekijken van de risicotabel blijkt dat er relatief meer vrouwen in leven zijn dan mannen naarmate de tijd verstrijkt. Desondanks geeft de grafiek een gemiddeld geschatte grotere overlevingskans voor mannen. als er gekeken wordt naar de risicotabel is er in verhouding meer vrouwen levend dan mannen naarmate tijd, maar dat de grafiek aantoont dat gemiddeld geschat de mannen grotere overlevingskans hebben. De p-waarde van 0.95 duidt op dat er geen significant statistisch verschil is tussen mannen en vrouwen in overlevingskansen bij hartfalen.
+
+### Kaplan-Meier leeftijd {-}
+Voor het visualiseren van de plot bij leeftijd wordt eerst gecontroleerd wat de minimale en maximale leeftijd is in de dataset. Dit is nodig voor het categoriseren van leeftijdsgroepen.
+```{r}
+# minimaal leeftijd 
+min(heart_data$age)
+
+# maximaal leeftijd
+max(heart_data$age)
+```
+
+```{r echo=F, message=F, fig.height=7, fig.cap= "Kaplan-Meier plot van de data Heart Failure Prediction gebaseerd op leeftijd, waarbij de tijd in dagen op de x-as staat, de overlevingskans op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes."}
+
+# maak leeftijdsgroepen
+heart_data$age_group <- cut(heart_data$age, breaks = c(40, 60, 80, 90, 100), labels = c("40-60", "60-80", "80-90", "95+"), include.lowest = TRUE)
+
+# maak survival leeftijd object
+survival_age <- survfit(surv_obj ~ age_group, data = heart_data)
+
+# plot Kaplan-Meier bij leeftijd
+ggsurvplot(survival_age, data = heart_data, pval = TRUE, # voeg p-waarde toe
+           conf.int = TRUE, # voeg betrouwbaarheidsinterval toe
+           risk.table = TRUE, # voeg risicotabel toe
+            risk.table.col = "age_group",
+          title = "Kaplan-Meier Overlevingscurve bij leeftijd",
+          xlab = "Tijd (dagen)", ylab = "Geschatte overlevingskans",
+          legend.title = "Leeftijd", legend.labs = c("40-60", "60-80", "80-90", "95+"))
+
+```
+De resultaat van figuur 2.4 toont de geschatte overlevingskansen van patiënten met hartfalen over tijd bij geslacht. Elk lijn vertegenwoordigt een leeftijdsgroep met bijbehorende kleuren voor onderscheiding. Uit de grafiek blijkt dat de overlevingskans van de leeftijdsgroep 40-60 het hoogst is over tijd. Dit wijst erop dat patienten van 40-60 jaar een grotere kans hebben om te overleven. De leeftijdsgroep 60-80 toont een lagere overlevingskansen in dan bij de groep van 40-60, maar heeft een redelijke overlevingkans in circa eerste 150 dagen. 
+Echter, de leeftijdsgroepen 80-90 jaar en 95+ jaar laten de snelste afname in overleving zien. Vooral de oudste groep van 95 jaar en ouder vertoont een sterke daling, wat resulteert in een hoger risico op overlijden.
+Daarnaast is de betrouwbaarheidsinterval van leeftijdsgroep 80-90 het breedst. Dit betekent dat de geschatte overlevingskansen voor deze groep minder nauwkeurig zijn en dat de betrouwbaarheid van de schattingen beperkt kan zijn. De p-waarde < 0.0001 duidt op dat er wel significant statistisch verschil is tussen leeftijdsgroepen in overlevingskansen bij hartfalen.
+
+
+### Log-rank test op rokers {-}
+Met behulp van de log-rank test, kan de significante verschillen in overlevingskansen tussen groepen berekend worden. 
+```{r echo=F, message=F}
+# maak survival smoke object 
+survival_smoke <- survfit(surv_obj ~ heart_data$smoking, data = heart_data)
+
+# log-rank test
+log_rank_test <- survdiff(surv_obj ~ heart_data$smoking)
+
+print(log_rank_test)
+
+```
+Voor de log-rank test werd de rokers en niet-rokers berekend van significant verschil. De volgende parameters zijn te zien:
+
+- N: Aantal individuen in elke groep
+
+- Observed: Het werkelijke aantal sterfgevallen in elke groep
+
+- Expected: Het verwachte aantal sterfgevallen in elke groep
+
+- (O-E)^2/E: Hoeveelheid voor de afwijking tussen waargenomen en verwachte waarden
+
+- (O-E)^2/V: Een genormaliseerde hoeveelheid voor de afwijking
+
+De p-waarde is 1, wat aangeeft dat er wel significant statistisch verschil is tussen rokers en niet-rokers in overlevingskansen bij hartfalen.
