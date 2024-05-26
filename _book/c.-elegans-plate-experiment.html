@@ -216,6 +216,14 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html#antimicrobiële-resistentie"><i class="fa fa-check"></i><b>7.2</b> Antimicrobiële resistentie</a></li>
 <li class="chapter" data-level="7.3" data-path="project-antimicrobiële-resistentie.html"><a href="project-antimicrobiële-resistentie.html#r-shiny-app"><i class="fa fa-check"></i><b>7.3</b> R shiny-app</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="parameterized-report-covid-19.html"><a href="parameterized-report-covid-19.html"><i class="fa fa-check"></i><b>8</b> Parameterized report COVID-19</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="parameterized-report-covid-19.html"><a href="parameterized-report-covid-19.html#param-lijst"><i class="fa fa-check"></i><b>8.1</b> Param lijst</a></li>
+<li class="chapter" data-level="8.2" data-path="parameterized-report-covid-19.html"><a href="parameterized-report-covid-19.html#importeren-en-inspecteren-1"><i class="fa fa-check"></i><b>8.2</b> Importeren en inspecteren</a></li>
+<li class="chapter" data-level="8.3" data-path="parameterized-report-covid-19.html"><a href="parameterized-report-covid-19.html#lijngrafiek-nederland-frankrijk-en-spanje"><i class="fa fa-check"></i><b>8.3</b> Lijngrafiek Nederland, Frankrijk en Spanje</a></li>
+<li class="chapter" data-level="8.4" data-path="parameterized-report-covid-19.html"><a href="parameterized-report-covid-19.html#lijngrafiek-roemenië-noorwegen-en-italië"><i class="fa fa-check"></i><b>8.4</b> Lijngrafiek Roemenië, Noorwegen en Italië</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="literatuur.html"><a href="literatuur.html"><i class="fa fa-check"></i><b>9</b> Literatuur</a></li>
 <li class="divider"></li>
 <li><a target="blank">Published with bookdown</a></li>
 </ul>
@@ -298,9 +306,9 @@ Interpreteer de resultaten van de analyse en benoem de resultaten met als doel d
 ## 10 2,6-diisopropylnaphthalene              4.99 experiment
 ## # ℹ 345 more rows</code></pre>
 <p>Op basis van de beschrijving van het experiment zouden we verwachten dat de kolom RawData numeriek is. Voor compName zou het een karakter of een factor moeten zijn en voor compConcentration zou het numeriek moeten zijn. Echter, na het importeren van de data, komen de datatypes niet overeen met deze verwachtingen.</p>
-<pre><code>## Warning: Removed 1 row containing missing values or
-## values outside the scale range
-## (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing
+## values or values outside the scale
+## range (`geom_point()`).</code></pre>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
 <img src="_main_files/figure-html/unnamed-chunk-11-1.png" alt="Scatterplot voor CE_LIQ_FLOW_062_Tidydata waarbij de concentratie van de verbinding op de x-as staat in log10, aantal nakomelingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes." width="672" />
 <p class="caption">
@@ -342,9 +350,9 @@ Figure 4.1: Scatterplot voor CE_LIQ_FLOW_062_Tidydata waarbij de concentratie va
 <pre><code>## [1] 1</code></pre>
 <div id="scatterplot-normalized-data" class="section level3 hasAnchor" number="4.4.1">
 <h3><span class="header-section-number">4.4.1</span> Scatterplot normalized data<a href="c.-elegans-plate-experiment.html#scatterplot-normalized-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<pre><code>## Warning: Removed 1 row containing missing values or
-## values outside the scale range
-## (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 1 row containing missing
+## values or values outside the scale
+## range (`geom_point()`).</code></pre>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
 <img src="_main_files/figure-html/unnamed-chunk-13-1.png" alt="Scatterplot van genormaliseerde data voor CE.LIQ.FLOW.062_Tidydata.xlsx waarbij de concentratie van de verbinding op de x-as staat, de genormaliseerde ruwe data tellingen op de y-as. Verschillende symbolen vertegenwoordigen verschillende experimenttypes." width="672" />
 <p class="caption">

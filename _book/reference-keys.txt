@@ -4,6 +4,10 @@ fig:unnamed-chunk-6
 fig:unnamed-chunk-7
 fig:unnamed-chunk-11
 fig:unnamed-chunk-13
+fig:unnamed-chunk-21-1
+fig:unnamed-chunk-21-2
+fig:unnamed-chunk-22-1
+fig:unnamed-chunk-22-2
 personal-profile
 survival-package
 guerrilla-analytics-principles
@@ -29,3 +33,9 @@ project-antimicrobiële-resistentie
 introductie-1
 antimicrobiële-resistentie
 r-shiny-app
+parameterized-report-covid-19
+param-lijst
+importeren-en-inspecteren-1
+lijngrafiek-nederland-frankrijk-en-spanje
+lijngrafiek-roemenië-noorwegen-en-italië
+literatuur
