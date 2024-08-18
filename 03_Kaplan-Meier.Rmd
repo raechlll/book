@@ -174,3 +174,75 @@ Voor de log-rank test werd de rokers en niet-rokers berekend van significant ver
 - (O-E)^2/V: Een genormaliseerde hoeveelheid voor de afwijking
 
 De p-waarde is 1, wat aangeeft dat er wel significant statistisch verschil is tussen rokers en niet-rokers in overlevingskansen bij hartfalen.
+
+### Cox Proportional Hazards Model {-}
+Het Cox Proportional Hazards Model modelleert het effect van verschillende variabelen, zoals leeftijd of roken, op de tijd tot overlijden. Hiermee kunnen we onderzoeken welke variabelen de overlevingskans van patiënten het meest beïnvloeden.
+
+```{r echo=F, message=F}
+cox_model <- coxph(Surv(time, DEATH_EVENT) ~ age + anaemia + creatinine_phosphokinase + ejection_fraction + high_blood_pressure + 
+platelets + serum_creatinine + serum_sodium + sex + smoking, data = heart_data)
+
+# Samenvatting van het Cox model
+summary(cox_model)
+
+```
+We onderzoeken de relatie tussen de variabelen (age + anaemia + creatinine_phosphokinase + ejection_fraction + high_blood_pressure + 
+platelets + serum_creatinine + serum_sodium + sex + smoking) en overlevingstijd (time) tot overlijden (DEATH_EVENT) optreedt. Er zijn 299 patiënten en 96 sterfgevallen.
+
+Hieronder staan enkele belangrijke parameters uit de tabel:
+
+- coef: Geeft aan of een bepaalde variabele het risico op overlijden verhoogt of verlaagt in schatting. Positieve waarden betekenen dat het risico toeneemt naarmate de variabele toeneemt, terwijl negatieve waarden aangeven dat het risico afneemt naarmate de variabele toeneemt.
+
+- exp(coef): Geeft het risico weer in een exponentiële waarde. Een waarde boven 1 betekent een verhoogd risico, en een waarde onder 1 betekent een verlaagd risico.
+
+- Pr(>|z|): Geeft aan of het effect van een variabele statistisch significant is.
+
+#### Cox Proportional Hazards Model resultaten {-}
+
+- age: Een verhoging van de leeftijd verhoogt het risico op overlijden met circa 4,6% (exp(coef) = 1.0460). De p-waarde is 5.86e-07, wat duidt op een significant effect. Het 95% betrouwbaarheidsinterval van leeftijd ligt tussen 1.0277 en 1.0647. Aangezien het interval boven de 1 ligt, is het effect van leeftijd positief significant.
+
+- anaemia: Patiënten met bloedarmoede hebben een verhoogd risico op overlijden met circa 59,5% (exp(coef) = 1.5953), met een significante p-waarde van 0.0314. Het 95% betrouwbaarheidsinterval van bloedarmoede ligt tussen 1.0424 en 2.4414. Omdat het interval boven de 1 ligt, is het effect van bloedarmoede positief significant.
+
+- creatinine_phosphokinase: Een verhoging van creatinine fosfokinase geeft een kleine stijging van het risico op overlijden met circa 0,002% (exp(coef) = 1.0002), met een significante p-waarde van 0.0273. Het 95% betrouwbaarheidsinterval van creatinine fosfokinase ligt tussen 1.0000 en 1.0004. Omdat het interval dicht bij de 1 ligt, is het effect van creatinine fosfokinase op het risico op overlijden klein en niet significant.
+
+- ejection_fraction: Een verhoging van de ejectiefractie verlaagt het risico op overlijden met circa 4,8% (exp(coef) = 0.9523). De p-waarde is 2.95e-06, wat duidt op een significant effect. Het 95% betrouwbaarheidsinterval van ejectiefractie ligt tussen 0.9330 en 0.9720. Aangezien het interval onder de 1 ligt, is het effect van een verhoogde ejectiefractie negatief significant.
+
+- high_blood_pressure: Verhoogde bloeddruk leidt tot een verhoogd risico op overlijden met circa 61,4% (exp(coef) = 1.6144). De p-waarde is 0.0267, wat duidt op een significant effect. Het 95% betrouwbaarheidsinterval van bloeddruk ligt tussen 1.0567 en 2.4664. Omdat het interval boven de 1 ligt, is het effect van verhoogde bloeddruk positief significant.
+
+- platelets: Er is geen significant effect op het risico op overlijden. De exp(coef) en p-waarde zijn beide 1. Het 95% betrouwbaarheidsinterval is precies 1, wat betekent dat het effect op het risico op overlijden niet significant is. Bloedplaatjes hebben geen effect op het risico op overlijden.
+
+- serum_creatinine: Een verhoging van serumcreatinineniveau verhoogt het risico op overlijden met circa 36,6% (exp(coef) = 1.3658). De p-waarde is 5.93e-06, wat duidt op een significant effect. Het 95% betrouwbaarheidsinterval van serumcreatinine ligt tussen 1.1934 en 1.5631. Omdat het interval boven de 1 ligt, is het effect van verhoogd serumcreatinineniveau positief significant.
+
+- serum_sodium: Een verhoging van serumnatriumniveau verlaagt het risico op overlijden met circa 4,5% (exp(coef) = 0.9546). De p-waarde is 0.0457, wat duidt op een significant effect. Het 95% betrouwbaarheidsinterval van serumnatrium ligt tussen 0.9121 en 0.9991. Omdat het interval onder de 1 ligt, is het effect van verhoogd serumnatriumniveau negatief significant.
+
+- sex: De p-waarde is 0.3300 > 0.05, waardoor er geen significant effect is op het risico op overlijden. Het 95% betrouwbaarheidsinterval van geslacht ligt tussen 0.4785 en 1.2811. Omdat het interval zowel boven als onder de 1 ligt, is het effect van geslacht niet significant. Geslacht heeft geen effect op het risico op overlijden.
+
+- smoking: De p-waarde is 0.6361 > 0.05, waardoor er geen significant effect is op het risico op overlijden. Het 95% betrouwbaarheidsinterval van roken ligt tussen 0.6886 en 1.8412. Omdat het interval zowel boven als onder de 1 ligt, is het effect van roken niet significant. Roken heeft geen effect op het risico op overlijden.
+
+De variabelen leeftijd, bloedarmoede, creatinine fosfokinase, ejectiefractie, hoge bloeddruk, serumcreatinine, en serumnatrium tonen aan dat ze significant van invloed zijn op het risico van overlijden bij hartfalenpatiënten. De andere variabelen hebben geen significant effect in dit model. Concordance = 0.739, wat aangeeft hoe betrouwbaar het model voorspelt. 0.739 is dicht bij 1, wat betekent dat het model goed voorspelt.
+
+### Cox Proportional Hazards Model controle {-}
+Met de `coxph` functie is het effect van verschillende variabelen op het risico op overlijden geschat. Met de functie `cox.zph` wordt gecontroleerd of het model correct werkt. De voorwaarde van de `coxph` functie is dat het effect van de variabelen over tijd gelijk blijft. Als deze voorwaarde niet wordt nageleefd, zouden de resultaten mogelijk niet betrouwbaar zijn. Dit maakt de conclusies betrouwbaarder.
+
+```{r echo=F, message=F}
+coxzph_model <- survival::cox.zph(cox_model)
+coxzph_model
+```
+Van de tabel zijn de volgende onderdelen te zien:
+
+- chisq: Chi-kwadraat-waarde die aangeeft hoeveel afwijking er is van de `coxph` model
+
+- df: Vrijheidsgraad die op 1 staat. Het geeft aan dat bij elk variabele 1 parameter getest wordt
+
+- p: P-waarde die aangeeft dat de voorwaarde wel of niet geldig is voor die variabele
+
+Alle variabelen voldoen aan de voorwaarde van het model, behalve "ejection_fraction". Voor deze variabele is de p-waarde 0.029 < 0.05, wat betekent dat het effect van ejectiefractie niet gelijk is over de tijd op overleving. Ook is de chi-kwadraatwaarde van ejectiefractie hoog, wat kan wijzen op een grote afwijking van de voorwaarde.
+
+
+
+Met behulp van de `ggcoxzph` functie wordt de resultaten van de `cox.zph` gevisualiseerd. 
+```{r echo=F, message=F, fig.width=15, fig.height=15}
+coxzph_graph <- survminer::ggcoxzph(coxzph_model)
+coxzph_graph
+```
+De horizontale lijn bij de y-as 0 is recht, wat betekent dat er geen significante verandering is in het effect van de variabelen over de tijd. De stippen geven de verschillen weer tussen de voorspelde en werkelijke waarden. De globale Schoenfeld-test p-waarde is 0.3161. Dit geeft aan dat het gehele model goed werkt en dat de voorwaarde van de effecten van de variabelen over de tijd klopt. De meeste stippen blijven dicht bij de horizontale lijn en binnen de gestippelde lijnen (betrouwbaarheidsinterval). Dit betekent dat het effect van deze variabelen over tijd nauwelijks verandert. Enkele grafieken tonen variatie door een aantal stippen die buiten het betrouwbaarheidsinterval liggen, wat mogelijk aangeeft dat het effect van die variabele kan veranderen. 
